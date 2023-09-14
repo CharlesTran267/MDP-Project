@@ -12,5 +12,7 @@ for image in os.listdir("test_images"):
         start = time.time()
         print(model.predict(f"test_images/{image}", confidence=40, overlap=30).json())
         print(f"Time taken: {time.time() - start}")
+        #visualize
+        model.predict(f"test_images/{image}", confidence=40, overlap=30).save(f"result_images/{image}")
 
 
